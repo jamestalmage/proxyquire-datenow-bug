@@ -1,4 +1,5 @@
 var proxyquire = require('proxyquire');
+var assert = require('assert');
 
 var now = proxyquire('./index', {
   'date-now': function() {
@@ -6,4 +7,4 @@ var now = proxyquire('./index', {
   }
 });
 
-console.log(now())
+assert.strictEqual(3, now());
